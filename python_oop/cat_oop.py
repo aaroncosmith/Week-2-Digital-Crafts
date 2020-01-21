@@ -1,10 +1,10 @@
 class Cat:
-    species = "mammal"
+    species = 'mammal'
     legs = 4
     eyes = 2
     tail = 1
 
-    def __init__(self, name, age)
+    def __init__(self, name, age):
         self.name = name
         self.age = age
 
@@ -12,3 +12,7 @@ class Cat:
         return "{} is {} years old".format(self.name, self.age)
 
 gus = Cat("Gus", 9)
+
+print(gus.description())
+# print(Cat.description) will not work.
+
