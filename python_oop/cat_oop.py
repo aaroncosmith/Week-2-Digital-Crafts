@@ -11,8 +11,14 @@ class Cat:
     def description(self):
         return "{} is {} years old".format(self.name, self.age)
 
-gus = Cat("Gus", 9)
+    def eat(self, food):
+        return "{} ate {} pounds of food".format(self.name, food)
 
-print(gus.description())
+gus = Cat("Gus", 9)
+description = gus.description()
+print(gus.eat(10))
+
+print(description)
+
 # print(Cat.description) will not work.
 
