@@ -3,9 +3,19 @@ class Person:
         self.name = name
         self.email = email
         self.phone = phone
+        self.friends = []
+        
 
     def greet(self, other_person):
         print('Hello {}, I am {}!'.format(other_person.name, self.name))
+    
+    def print_contact_info(self, name, email, phone):
+        print("{}'s contact info is: {} ; {} ".format(self.name, self.email, self.phone))
+
+    def add_friend (self, friends):
+        self.friends.append(friends)
+
+        
 
 # Write code to:
 
@@ -34,4 +44,39 @@ print("{}'s contact info is: {} ; {} ".format(sonny.name, sonny.email, sonny.pho
 # 6. do the same for Jordan, we could also add a function to our class to do this
 
 print("{}'s contact info is: {} ; {} ".format(jordan.name, jordan.email, jordan.phone))
+
+################################
+# 2. create a class vehicle
+
+class Vehicle: 
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+
+    # add a method
+    def print_info(self, year, make, model):
+        print("{} {} {}".format(self.year, self.make, self.model) )
+
+car = Vehicle("Dodge", "Charger", "1969")
+car.print_info(car.year, car.make, car.model)
+
+# test adding our function on line 10
+# sonny.print_contact_info(sonny.name, sonny.email, sonny.phone)
+
+# add an instance variable (attribute)
+# added it in __init__
+# append into the list for each object
+
+#jordan.friends.append(sonny)
+#sonny.friends.append(jordan)
+
+# find how many friends using len()
+# print(len(jordan.friends))
+
+# now I will add an add_friend method to Person line 15
+jordan.add_friend(sonny)
+sonny.add_friend(jordan)
+
+# now lets add a num_friends method
 
