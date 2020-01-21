@@ -4,19 +4,22 @@ class Person:
         self.email = email
         self.phone = phone
         self.friends = []
-        
+        self.greeting_count = 0
 
     def greet(self, other_person):
         print('Hello {}, I am {}!'.format(other_person.name, self.name))
+        self.greeting_count += 1
     
     def print_contact_info(self, name, email, phone):
         print("{}'s contact info is: {} ; {} ".format(self.name, self.email, self.phone))
 
-    def add_friend (self, friends):
+    def add_friend(self, friends):
         self.friends.append(friends)
 
-        
+    def num_friends(self):
+        print(len(self.friends))
 
+    
 # Write code to:
 
 #  1. instantiate an istance object of Person with name of "Sonny"
@@ -79,4 +82,13 @@ jordan.add_friend(sonny)
 sonny.add_friend(jordan)
 
 # now lets add a num_friends method
+jordan.num_friends()
+# it works!!
 
+# now we can count the number of greetings, added greeting_count attribute, added some
+# code to the greet function
+sonny.greet(jordan)
+sonny.greet(jordan)
+sonny.greet(jordan)
+
+print(sonny.greeting_count)
